@@ -12,4 +12,11 @@ describe('MessageToggle.vue', () => {
     button.trigger('click')
     expect(MessageComponent.hasProp('msg', 'toggled message')).toBe(true)
   })
+
+  it('renders message set programmatically', () => {
+    const testMsg = 'testyMcTestface'
+    const wrapper = shallow(MessageToggle)
+    wrapper.setData({ msg: testMsg })
+    expect(wrapper.vm.msg).toBe(testMsg)
+  })
 })

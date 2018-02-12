@@ -15,11 +15,4 @@ describe('Message', () => {
     const wrapper = shallow(Message, {context: {}})
     expect(wrapper.text()).toBe(defaultMessage)
   })
-
-  it('renders message set programmatically', () => {
-    const testMsg = 'testyMcTestface'
-    const wrapper = shallow(Message, {context: {}})
-    wrapper.setData({ msg: testMsg })
-    expect(wrapper.text()).toBe(testMsg)
-  })
 })
